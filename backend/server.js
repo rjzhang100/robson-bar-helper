@@ -2,10 +2,14 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 require("dotenv").config({path: "./config.env"});
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 80;
+
+app.use(express.static(path.join(__dirname, "./frontend/build")));
+
 app.use(cors());
 app.use(express.json());
 app.use(require("./routes/routes"));
+
 
 const dbo = require("./db/conn");
 app.listen(port, () => {
