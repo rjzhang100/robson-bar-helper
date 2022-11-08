@@ -1,4 +1,5 @@
 const { MongoClient } = require("mongodb");
+require("dotenv").config({path: "./config.env"});
 const Db = process.env.ATLAS_URI;
 const client = new MongoClient(Db, {
   useNewUrlParser: true,
@@ -6,7 +7,7 @@ const client = new MongoClient(Db, {
 });
  
 var _db;
- 
+
 module.exports = {
   connectToServer: function (callback) {
     client.connect(function (err, db) {

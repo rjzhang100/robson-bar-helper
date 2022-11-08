@@ -1,7 +1,7 @@
 const { response } = require('express');
 const express = require('express');
 const recordRoutes = express.Router();
-const dbo = require("../../backend/db/conn");
+const dbo = require("./db/conn");
 const ObjectID = require("mongodb").ObjectID;
 
 // Get all items

@@ -1,4 +1,3 @@
-import { shouldForwardProp } from "@mui/styled-engine";
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
@@ -35,6 +34,7 @@ const Update = () => {
 
             setForm(record);
         }
+        
         fetchData();
         return;
     }, [params.id, navigate]);
