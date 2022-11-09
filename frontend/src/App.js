@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Routes} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Create from './components/create';
 import NavBar from './components/navbar';
 import Inventory from './components/inventory';

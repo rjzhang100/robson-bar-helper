@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const path = require('path');
 require("dotenv").config({path: "./config.env"});
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname, "./frontend/build")));
 

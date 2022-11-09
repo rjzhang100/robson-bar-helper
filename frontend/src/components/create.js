@@ -8,6 +8,7 @@ const Create = () => {
         type: "",
         quantity: 0
     });
+
     const navigate = useNavigate();
 
     function updateForm(value) {
@@ -45,21 +46,25 @@ const Create = () => {
           Make sure it's spelt right! 
         </Form.Text>
       </Form.Group>
+
       <Form.Group className="mb-3" controlId="text">
         <Form.Label>Item Category</Form.Label>
         <Form.Control type="text" placeholder="Type of item e.g Red Wine, Bottled Beer, Syrup" 
             onChange = {(e) => updateForm({type: e.target.value})}
         />
       </Form.Group>
+
       <Form.Group className="mb-3" controlId="text">
         <Form.Label>Quantity of Item </Form.Label>
         <Form.Control type="number" placeholder="Enter quantity of item" 
             onChange = {(e) => updateForm({quantity: e.target.value})}
         />
       </Form.Group>
+
       <Button variant="primary" type="submit">
         Submit
       </Button>
+      
     </Form>
     </div>
     );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form"
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -13,31 +14,6 @@ const Update = () => {
 
     const params = useParams();
     const navigate = useNavigate();
-
-    useEffect(() => {
-        async function fetchData() {
-            const id = params.id.toString();
-            const response = await fetch(`http://localhost:8080/record/${params.id.toString()}`);
-
-            if (!response.ok) {
-                const message = `An error has occured: ${response.statusText}`;
-                window.alert(message);
-                return;
-            }
-
-            const record = await response.json();
-            if (!record) {
-                window.alert(`Record with id ${id} not found.`);
-                navigate("/");
-                return;
-            }
-
-            setForm(record);
-        }
-        
-        fetchData();
-        return;
-    }, [params.id, navigate]);
 
     function updateForm(value) {
         return setForm((prev) => {

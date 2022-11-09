@@ -1,13 +1,15 @@
 services:
-  robson-bar-helper-frontend:
+  frontend:
     build: 
       context: ./frontend
       dockerfile: Dockerfile.reactUI
+    image: 
+      rjzhang100/robson-bar-helper:FEv1
     ports:
       - "8080:8080"    
     depends_on:
       - db
-  robson-helper-backend: 
+  backend: 
     build: 
       context: ./backend
       dockerfile: Dockerfile.node
@@ -15,6 +17,8 @@ services:
       - ATLAS_URI=mongodb+srv://rjzhang100:omrf1yAUcl273Lvg@cluster0.j3lsalz.mongodb.net/test
     ports: 
       - "9000:9000"    
+    image: 
+      rjzhang100/robson-bar-helper:BEv1
     depends_on:
       - db
   db:
